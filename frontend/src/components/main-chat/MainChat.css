@@ -1,0 +1,19 @@
+.Main-chat-layout {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.Img-container {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+.Wait-image {
+    min-width: 500px;
+    max-width: 576px;
+    max-height: 380px;
+    height: 100%;
+    align-self: center;
+}

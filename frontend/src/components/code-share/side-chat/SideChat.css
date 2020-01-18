@@ -1,0 +1,7 @@
+.Side-chat {
+    width: 30%;
+    min-width: 186px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}

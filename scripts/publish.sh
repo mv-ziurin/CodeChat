@@ -1,0 +1,4 @@
+SERVICE_NAME=$1
+
+echo \> docker push webber1580/$SERVICE_NAME:$CI_PIPELINE_ID
+docker push webber1580/$SERVICE_NAME:$CI_PIPELINE_ID

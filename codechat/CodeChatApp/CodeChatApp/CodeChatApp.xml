@@ -1,0 +1,399 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CodeChatApp</name>
+    </assembly>
+    <members>
+        <member name="T:CodeChatApp.Controllers.JsonRPC.CodeChatController">
+            <summary>
+            Main controller
+            </summary>
+        </member>
+        <member name="M:CodeChatApp.Controllers.JsonRPC.CodeChatController.Get">
+            <summary>
+            HealthCheck method
+            </summary>
+            <returns> 'Stoit Vrode' message with 200 status code</returns>
+        </member>
+        <member name="M:CodeChatApp.Controllers.JsonRPC.CodeChatController.Post(CodeChatApp.Controllers.JsonRPC.Models.Request)">
+            <summary>
+            Main controller method for int ower JSON-RPC
+            </summary>
+            <param name="request">Request Body</param>
+            <returns>Response body and status code 200</returns>
+        </member>
+        <member name="T:CodeChatApp.Controllers.JsonRPC.Models.Request">
+            <summary>
+            Represents request body class
+            </summary>
+        </member>
+        <member name="P:CodeChatApp.Controllers.JsonRPC.Models.Request.Method">
+            <summary>
+            Method to invoke in JSON-RPC
+            </summary>
+        </member>
+        <member name="P:CodeChatApp.Controllers.JsonRPC.Models.Request.Token">
+            <summary>
+            Auth token
+            </summary>
+        </member>
+        <member name="P:CodeChatApp.Controllers.JsonRPC.Models.Request.Params">
+            <summary>
+            others params. Could be everything
+            </summary>
+        </member>
+        <member name="T:CodeChatApp.Controllers.JsonRPC.Models.Response">
+            <summary>
+            Represents response body
+            </summary>
+        </member>
+        <member name="P:CodeChatApp.Controllers.JsonRPC.Models.Response.Status">
+            <summary>
+            custom status code. Check readme.md to get more info 
+            https://gitlab.com/codechat-bmstu/codechat/tree/master/codechat/CodeChatApp/CodeChatApp
+            </summary>
+        </member>
+        <member name="P:CodeChatApp.Controllers.JsonRPC.Models.Response.Result">
+            <summary>
+            reqyest result body
+            </summary>
+        </member>
+        <member name="T:CodeChatApp.Hubs.CodeChatHub">
+            <summary>
+            Hub for real-time interaction
+            </summary>
+        </member>
+        <member name="M:CodeChatApp.Hubs.CodeChatHub.SendToMainChat(System.String,System.String,System.String)">
+            <summary>
+            Send message in main chat
+            </summary>
+            <param name="token"></param>
+            <param name="chatId"></param>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CodeChatApp.Hubs.CodeChatHub.UpdateChats(System.String)">
+            <summary>
+            Update chat's list event
+            </summary>
+            <param name="userName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CodeChatApp.Hubs.CodeChatHub.JoinChat(System.String,System.String)">
+            <summary>
+            Joint chat event
+            </summary>
+            <param name="userName"></param>
+            <param name="chatId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CodeChatApp.Hubs.CodeChatHub.LeaveChat(System.String,System.String)">
+            <summary>
+            Leave chat event
+            </summary>
+            <param name="token"></param>
+            <param name="chatId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CodeChatApp.Hubs.CodeChatHub.JoinCodeChat(System.String,System.String)">
+            <summary>
+            Join codeChat event
+            </summary>
+            <param name="token"></param>
+            <param name="codeChatId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CodeChatApp.Hubs.CodeChatHub.LeaveCodeChat(System.String,System.String)">
+            <summary>
+            leave codechat event
+            </summary>
+            <param name="token"></param>
+            <param name="codeChatId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CodeChatApp.Hubs.CodeChatHub.GetInitialData(System.String)">
+            <summary>
+            This data required when u entered the codechat
+            </summary>
+            <param name="codeChatId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CodeChatApp.Hubs.CodeChatHub.SendToCodeShare(System.String,System.String)">
+            <summary>
+            Send text to codeshare zone
+            </summary>
+            <param name="codeChatId"></param>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CodeChatApp.Hubs.CodeChatHub.SwitchModeCodeShare(System.String,System.String,System.String)">
+            <summary>
+            Switch coding language in codeShare
+            </summary>
+            <param name="codeChatId"></param>
+            <param name="mode"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CodeChatApp.Hubs.CodeChatHub.SendToCodeChat(System.String,System.String,System.String)">
+            <summary>
+            Send message in codechat
+            </summary>
+            <param name="token"></param>
+            <param name="codeChatId"></param>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="T:CodeChatApp.Hubs.Models.CodeEditor">
+            <summary>
+            Represent codemirror entity on frontend
+            </summary>
+        </member>
+        <member name="P:CodeChatApp.Hubs.Models.CodeEditor.ModeValue">
+            <summary>
+            selected coding language
+            </summary>
+        </member>
+        <member name="P:CodeChatApp.Hubs.Models.CodeEditor.Text">
+            <summary>
+            code listing
+            </summary>
+        </member>
+        <member name="T:CodeChatApp.Services.Implementor">
+            <summary>
+            This service implemets main functional for JSON-RPC interaction
+            </summary>
+        </member>
+        <member name="M:CodeChatApp.Services.Implementor.GetChats(System.String,Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Get list of user's chats
+            </summary>
+            <param name="token"></param>
+            <param name="jObject"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CodeChatApp.Services.Implementor.GetMessageHistory(System.String,Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Get messageHistory of specific chat
+            </summary>
+            <param name="token"></param>
+            <param name="jobject"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CodeChatApp.Services.Implementor.PostChat(System.String,Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Create new chat
+            </summary>
+            <param name="token"></param>
+            <param name="jobject"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CodeChatApp.Services.Implementor.PostCodeChat(System.String,Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Create new codechat
+            </summary>
+            <param name="token"></param>
+            <param name="jobject"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CodeChatApp.Services.Implementor.AddUserToChat(System.String,Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Add user to ur chat
+            </summary>
+            <param name="token"></param>
+            <param name="jobject"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CodeChatApp.Services.Implementor.LeaveChannel(System.String,Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            Leave channel event. If there no linked users to current chat, then chat would be removed from DB.
+            </summary>
+            <param name="token"></param>
+            <param name="jobject"></param>
+            <returns></returns>
+        </member>
+        <member name="T:CodeChatApp.Services.Repository">
+            <summary>
+            Service for intearacting with DB
+            </summary>
+        </member>
+        <member name="M:CodeChatApp.Services.Repository.GetChat(System.Int64)">
+            <summary>
+            Get list of chats from DB
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CodeChatApp.Services.Repository.GetCodeChat(System.Int64)">
+            <summary>
+            Get codechats from DB
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CodeChatApp.Services.Repository.GetMessage(System.Int64)">
+            <summary>
+            Get list of message from DB
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CodeChatApp.Services.Repository.GetUserChat(System.Int64)">
+            <summary>
+            Get links users to chats from DB
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CodeChatApp.Services.Repository.GetUser(System.String)">
+            <summary>
+            Get list of users from DB
+            </summary>
+            <param name="username"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CodeChatApp.Services.Repository.GetChats">
+            <summary>
+            Get list of chats from DB
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CodeChatApp.Services.Repository.GetCodeChats">
+            <summary>
+            Get list of codechats from DB
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CodeChatApp.Services.Repository.GetMessages">
+            <summary>
+            Get list of messages from DB
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CodeChatApp.Services.Repository.GetUserChats">
+            <summary>
+            Get list of Userchats from DB
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CodeChatApp.Services.Repository.GetUsers">
+            <summary>
+            Get list of users from DB
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:CodeChatApp.Services.Repository.GetChatsList(System.String)">
+            <summary>
+            Get chat's list from db
+            </summary>
+            <param name="userName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CodeChatApp.Services.Repository.GetCodeChatsList(System.Int64)">
+            <summary>
+            Get list of codechat's from db
+            </summary>
+            <param name="chatId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CodeChatApp.Services.Repository.PostChat(CodeChatApp.Database.Models.Chat)">
+            <summary>
+            Create new Chat
+            </summary>
+            <param name="chat"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CodeChatApp.Services.Repository.PostCodeChat(CodeChatApp.Database.Models.CodeChat)">
+            <summary>
+            Create new CodeChat
+            </summary>
+            <param name="codechat"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CodeChatApp.Services.Repository.PostMessage(CodeChatApp.Database.Models.Message)">
+            <summary>
+             Create new Message
+            </summary>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CodeChatApp.Services.Repository.PostUserChat(CodeChatApp.Database.Models.UserChat)">
+            <summary>
+            Create new UserChat link
+            </summary>
+            <param name="userchat"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CodeChatApp.Services.Repository.DeleteChat(CodeChatApp.Database.Models.Chat)">
+            <summary>
+            Remove chat from DB
+            </summary>
+            <param name="chat"></param>
+        </member>
+        <member name="M:CodeChatApp.Services.Repository.DeleteCodeChat(CodeChatApp.Database.Models.CodeChat)">
+            <summary>
+            Remove CodeChat from DB
+            </summary>
+            <param name="codechat"></param>
+        </member>
+        <member name="M:CodeChatApp.Services.Repository.DeleteMessage(CodeChatApp.Database.Models.Message)">
+            <summary>
+            Remove message from DB
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:CodeChatApp.Services.Repository.DeleteUserChat(CodeChatApp.Database.Models.UserChat)">
+            <summary>
+            Remove User to Chat link from DB
+            </summary>
+            <param name="userchat"></param>
+        </member>
+        <member name="M:CodeChatApp.Services.Repository.DeleteUserChat(System.Int64,System.String)">
+            <summary>
+            Remove User to Chat link from DB
+            </summary>
+            <param name="chatId"></param>
+            <param name="username"></param>
+        </member>
+        <member name="M:CodeChatApp.Services.Repository.DeleteFreeChats(System.Int64,System.String)">
+            <summary>
+            Remove free chats without users
+            </summary>
+            <param name="chatId"></param>
+            <param name="username"></param>
+        </member>
+        <member name="M:CodeChatApp.Services.Repository.CheckUserInChat(CodeChatApp.Database.Models.UserChat)">
+            <summary>
+            Check if exist users in certain chat
+            </summary>
+            <param name="userchat"></param>
+            <returns></returns>
+        </member>
+        <member name="T:CodeChatApp.Services.Validator">
+            <summary>
+            This service implemets main functional for ayth token validation
+            </summary>
+        </member>
+        <member name="M:CodeChatApp.Services.Validator.Validate(System.String)">
+            <summary>
+            Validate token
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CodeChatApp.Services.Validator.CheckUser(System.String)">
+            <summary>
+            Find out if user with such username exists in DB
+            </summary>
+            <param name="username"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CodeChatApp.Services.Validator.GetUserName(System.String)">
+            <summary>
+            Get user name from auth token
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

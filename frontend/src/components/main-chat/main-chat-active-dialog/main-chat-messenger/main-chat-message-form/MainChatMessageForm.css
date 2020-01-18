@@ -1,0 +1,20 @@
+.Message-form {
+  width: 100%;
+  height: 20%;
+  display: flex;
+}
+
+.Message-field {
+  justify-self: flex-start;
+  align-self: center;
+  width: 95%;
+  min-height: 60px;
+}
+
+.Button-send {
+  align-self: center;
+  justify-self: flex-end;
+  max-width: 40px;
+  max-height: 40px;
+  width: 5%;
+}

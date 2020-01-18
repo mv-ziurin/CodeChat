@@ -1,0 +1,9 @@
+.Message-list {
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    width: 100%;
+    height: 80%;
+    overflow-y: auto;
+    padding: 4px;
+}

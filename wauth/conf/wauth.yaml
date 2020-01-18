@@ -1,0 +1,98 @@
+# TODO fix cast to int "12345"
+
+# TODO only for steam scheme (make steam dict) ~ https://steamcommunity.com/openid
+scheme: "http"
+host: "auth.codechat.ru"
+
+base_host: "codechat.ru"
+
+bind: 7070
+
+captcha:
+  private_key: "6LdQc3gUAAAAAABx20bZqrzl2W4J78I3NDLNDyHb"
+
+enable:
+  register: 1
+  receive_email: 1
+
+request_email:
+  subject: "Thank you for registration!"
+
+restore_email:
+  subject: "Restore email"
+
+subscribe:
+  subject: "Codechat. Thank You For Subscribing!"
+
+access_origins:
+  - "https://codechat.ru"
+  - "http://codechat.ru"
+  - "http://localhost:3000"
+  - "http://localhost:3001"
+
+cookie:
+  key: "gsession"
+  domain: ".codechat.ru"
+
+steam_redirect: "http://codechat.ru/profile/security"
+
+auth_redirect_success: "http://codechat.ru/mainchat"
+auth_redirect_fail: "http://codechat.ru?error=1"
+
+register_redirect_success: "http://codechat.ru/mainchat"
+register_redirect_fail: "http://codechat.ru?error=1"
+
+logout_redirect: "http://codechat.ru"
+
+database:
+  host: "database"
+  port: 5432
+
+  user: "postgres"
+  password: "postgres"
+
+  dbname: "codechat"
+
+# session must live for a week
+jwt:
+  key: "secretsecretsecret"
+
+  expires: 604800
+
+  projects:
+    - "api"
+
+validate:
+  username_len_min: 4
+  username_len_max: 20
+
+  password_len_min: 6
+  password_len_max: 30
+
+  password_special_symbols_enable: 0
+  password_special_symbols: " !\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~"
+
+  password_need_symbols:
+    - "abcdefghijklmnopqrstuvwxyz"
+#    - "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+smtp:
+  server: "easysender:5555"
+
+  module: "auth"
+  pool_size: 4
+
+notifier:
+  scheme: "http"
+  server: "notifier:4444"
+
+  timeout: 2000
+
+  hello_text: "Hello, welcome to our platform!"
+
+tarantool_tokener:
+  server: "tokener_tarantool:3301"
+  username: "tester"
+  password: "password"
+
+  timeout: 2000

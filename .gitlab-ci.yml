@@ -1,0 +1,132 @@
+stages:
+  - build
+  - test
+  - publish
+  - deploy
+
+# ---------------------- BUILD ---------------------- 
+
+codechat_build:
+  stage: build
+  script:
+    - . ./scripts/build.sh codechat codechat/CodeChatApp/CodeChatApp
+  tags:
+    - codechat
+    
+database_build:
+  stage: build
+  script:
+    - . ./scripts/build.sh database database
+  tags:
+    - codechat
+    
+easysender_build:
+  stage: build
+  script:
+    - . ./scripts/build.sh easysender easysender
+  tags:
+    - codechat
+    
+frontend_build:
+  stage: build
+  script:
+    - . ./scripts/build.sh frontend frontend
+  tags:
+    - codechat
+    
+wauth_build:
+  stage: build
+  script:
+    - . ./scripts/build.sh wauth wauth
+  tags:
+    - codechat
+    
+tokener_tarantool_build:
+  stage: build
+  script:
+    - . ./scripts/build.sh tokener_tarantool wauth/tarantool
+  tags:
+    - codechat
+    
+# ----------------------- TEST  ----------------------- 
+    
+codechat_tests:
+  stage: test
+  script:
+    - . ./scripts/build.sh tests codechat/CodeChatApp
+    - . ./scripts/run.sh tests codechat/CodeChatApp
+  tags:
+    - codechat
+    
+# ----------------------- PUBLISH  ----------------------- 
+
+codechat_publish:
+  stage: publish
+  script:
+    - docker login -u $registry_login -p $registry_password
+    - . ./scripts/publish.sh codechat
+  tags:
+    - codechat
+    
+database_publish:
+  stage: publish
+  script:
+    - docker login -u $registry_login -p $registry_password
+    - . ./scripts/publish.sh database
+  tags:
+    - codechat
+    
+easysender_publish:
+  stage: publish
+  script:
+    - docker login -u $registry_login -p $registry_password
+    - . ./scripts/publish.sh easysender
+  tags:
+    - codechat
+    
+frontend_publish:
+  stage: publish
+  script:
+    - docker login -u $registry_login -p $registry_password
+    - . ./scripts/publish.sh frontend
+  tags:
+    - codechat
+    
+wauth_publish:
+  stage: publish
+  script:
+    - docker login -u $registry_login -p $registry_password
+    - . ./scripts/publish.sh wauth
+  tags:
+    - codechat
+    
+tokener_tarantool_publish:
+  stage: publish
+  script:
+    - docker login -u $registry_login -p $registry_password
+    - . ./scripts/publish.sh tokener_tarantool
+  tags:
+    - codechat
+    
+# ----------------------- DEPLOY  ----------------------- 
+
+deploy_develop:
+  stage: deploy
+  except:
+    - master
+  when: manual
+  script:
+    - docker login -u $registry_login -p $registry_password
+    - . ./scripts/deploy.sh
+  tags:
+    - codechat
+    
+deploy_prod:
+  stage: deploy
+  only:
+    - master
+  script:
+    - docker login -u $registry_login -p $registry_password
+    - . ./scripts/deploy.sh
+  tags:
+    - codechat

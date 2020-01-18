@@ -1,0 +1,37 @@
+{
+	"version": 0,
+	"dependencies": [
+		{
+			"importpath": "github.com/beego/goyaml2",
+			"repository": "https://github.com/beego/goyaml2",
+			"revision": "5545475820ddd4db3f90a4900d44b65d077d702d",
+			"branch": "master"
+		},
+		{
+			"importpath": "github.com/davecgh/go-spew/spew",
+			"repository": "https://github.com/davecgh/go-spew",
+			"revision": "87df7c60d5820d0f8ae11afede5aa52325c09717",
+			"branch": "master",
+			"path": "/spew"
+		},
+		{
+			"importpath": "github.com/inwady/easyconfig",
+			"repository": "https://github.com/inwady/easyconfig",
+			"revision": "7eab4747ed8c638f4943c5ec33c124b43ae5ad47",
+			"branch": "master"
+		},
+		{
+			"importpath": "github.com/pmezard/go-difflib/difflib",
+			"repository": "https://github.com/pmezard/go-difflib",
+			"revision": "792786c7400a136282c1664665ae0a8db921c6c2",
+			"branch": "master",
+			"path": "/difflib"
+		},
+		{
+			"importpath": "github.com/wendal/errors",
+			"repository": "https://github.com/wendal/errors",
+			"revision": "f66c77a7882b399795a8987ebf87ef64a427417e",
+			"branch": "master"
+		}
+	]
+}

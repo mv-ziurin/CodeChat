@@ -1,0 +1,166 @@
+{
+	"version": 0,
+	"dependencies": [
+		{
+			"importpath": "cloud.google.com/go/compute/metadata",
+			"repository": "https://code.googlesource.com/gocloud",
+			"revision": "f623f34798d55f8839bc7b29b7842fbfdc81763f",
+			"branch": "master",
+			"path": "/compute/metadata"
+		},
+		{
+			"importpath": "github.com/akavel/go-openid",
+			"repository": "https://github.com/akavel/go-openid",
+			"revision": "5021f800d0de96bc42ad5a646556e683b57c3342",
+			"branch": "master"
+		},
+		{
+			"importpath": "github.com/beego/goyaml2",
+			"repository": "https://github.com/beego/goyaml2",
+			"revision": "5545475820ddd4db3f90a4900d44b65d077d702d",
+			"branch": "master"
+		},
+		{
+			"importpath": "github.com/davecgh/go-spew/spew",
+			"repository": "https://github.com/davecgh/go-spew",
+			"revision": "87df7c60d5820d0f8ae11afede5aa52325c09717",
+			"branch": "master",
+			"path": "/spew"
+		},
+		{
+			"importpath": "github.com/dgrijalva/jwt-go",
+			"repository": "https://github.com/dgrijalva/jwt-go",
+			"revision": "dbeaa9332f19a944acb5736b4456cfcc02140e29",
+			"branch": "master"
+		},
+		{
+			"importpath": "github.com/dpapathanasiou/go-recaptcha",
+			"repository": "https://github.com/dpapathanasiou/go-recaptcha",
+			"revision": "0e9736be20f9b0ca229b8f5eaf8305858a160994",
+			"branch": "master"
+		},
+		{
+			"importpath": "github.com/inwady/easyconfig",
+			"repository": "https://github.com/inwady/easyconfig",
+			"revision": "7eab4747ed8c638f4943c5ec33c124b43ae5ad47",
+			"branch": "master"
+		},
+		{
+			"importpath": "github.com/klauspost/compress/flate",
+			"repository": "https://github.com/klauspost/compress",
+			"revision": "b88785bfd699aa994985ea91b90ee8a1721c3fe1",
+			"branch": "master",
+			"path": "/flate"
+		},
+		{
+			"importpath": "github.com/klauspost/compress/gzip",
+			"repository": "https://github.com/klauspost/compress",
+			"revision": "b88785bfd699aa994985ea91b90ee8a1721c3fe1",
+			"branch": "master",
+			"path": "/gzip"
+		},
+		{
+			"importpath": "github.com/klauspost/compress/zlib",
+			"repository": "https://github.com/klauspost/compress",
+			"revision": "b88785bfd699aa994985ea91b90ee8a1721c3fe1",
+			"branch": "master",
+			"path": "/zlib"
+		},
+		{
+			"importpath": "github.com/klauspost/cpuid",
+			"repository": "https://github.com/klauspost/cpuid",
+			"revision": "ae832f27941af41db13bd6d8efd2493e3b22415a",
+			"branch": "master"
+		},
+		{
+			"importpath": "github.com/lib/pq",
+			"repository": "https://github.com/lib/pq",
+			"revision": "88edab0803230a3898347e77b474f8c1820a1f20",
+			"branch": "master"
+		},
+		{
+			"importpath": "github.com/pmezard/go-difflib/difflib",
+			"repository": "https://github.com/pmezard/go-difflib",
+			"revision": "792786c7400a136282c1664665ae0a8db921c6c2",
+			"branch": "master",
+			"path": "/difflib"
+		},
+		{
+			"importpath": "github.com/tarantool/go-tarantool",
+			"repository": "https://github.com/tarantool/go-tarantool",
+			"revision": "5de9a66537ce6f0d98834cebd9c1348b68042107",
+			"branch": "master"
+		},
+		{
+			"importpath": "github.com/valyala/bytebufferpool",
+			"repository": "https://github.com/valyala/bytebufferpool",
+			"revision": "e746df99fe4a3986f4d4f79e13c1e0117ce9c2f7",
+			"branch": "master"
+		},
+		{
+			"importpath": "github.com/valyala/fasthttp",
+			"repository": "https://github.com/valyala/fasthttp",
+			"revision": "e5f51c11919d4f66400334047b897ef0a94c6f3c",
+			"branch": "master"
+		},
+		{
+			"importpath": "github.com/valyala/tcplisten",
+			"repository": "https://github.com/valyala/tcplisten",
+			"revision": "ceec8f93295a060cdb565ec25e4ccf17941dbd55",
+			"branch": "master"
+		},
+		{
+			"importpath": "github.com/wendal/errors",
+			"repository": "https://github.com/wendal/errors",
+			"revision": "f66c77a7882b399795a8987ebf87ef64a427417e",
+			"branch": "master"
+		},
+		{
+			"importpath": "gitlab.com/gamechain/gameserver/easysender/src/easysender/template/data",
+			"repository": "https://gitlab.com/gamechain/gameserver.git",
+			"revision": "0072cce398914320f2073633a4acaf9699b22fb7",
+			"branch": "master",
+			"path": "/easysender/src/easysender/template/data"
+		},
+		{
+			"importpath": "gitlab.com/gamechain/gameserver/wauth/src/wauth/model/tokener",
+			"repository": "https://gitlab.com/gamechain/gameserver.git",
+			"revision": "48d9b4b694513db36baab0367d7c942599ff835f",
+			"branch": "master",
+			"path": "/wauth/src/wauth/model/tokener"
+		},
+		{
+			"importpath": "gitlab.com/gamechain/gameserver/wauth/src/wauth/util",
+			"repository": "https://gitlab.com/gamechain/gameserver.git",
+			"revision": "772f520711f7a35d08d75040daa9ebdb7bd1f274",
+			"branch": "master",
+			"path": "/wauth/src/wauth/util"
+		},
+		{
+			"importpath": "golang.org/x/crypto/blowfish",
+			"repository": "https://go.googlesource.com/crypto",
+			"revision": "1875d0a70c90e57f11972aefd42276df65e895b9",
+			"branch": "master",
+			"path": "/blowfish"
+		},
+		{
+			"importpath": "golang.org/x/net/context",
+			"repository": "https://go.googlesource.com/net",
+			"revision": "2f5d2388922f370f4355f327fcf4cfe9f5583908",
+			"branch": "master",
+			"path": "/context"
+		},
+		{
+			"importpath": "golang.org/x/oauth2",
+			"repository": "https://go.googlesource.com/oauth2",
+			"revision": "d2e6202438beef2727060aa7cabdd924d92ebfd9",
+			"branch": "master"
+		},
+		{
+			"importpath": "gopkg.in/vmihailenco/msgpack.v2",
+			"repository": "https://gopkg.in/vmihailenco/msgpack.v2",
+			"revision": "f4f8982de4ef0de18be76456617cc3f5d8d8141e",
+			"branch": "master"
+		}
+	]
+}

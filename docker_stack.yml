@@ -1,0 +1,61 @@
+version: '3.2'
+
+services:
+
+    codechat:
+      image: webber1580/codechat:${CI_PIPELINE_ID}
+      ports:
+        - "5000:80"
+      depends_on:
+        - database
+      networks:
+        - net
+        
+    database:
+      image: webber1580/database:56715927
+      ports:
+        - "5432:5432"
+      networks:
+        - net
+    
+    database_admin:
+      image: dpage/pgadmin4
+      environment:
+        PGADMIN_DEFAULT_EMAIL: "inwady@gmail.com"
+        PGADMIN_DEFAULT_PASSWORD: "password"
+      ports:
+        - "8080:80"
+      networks:
+        - net
+      
+    easysender:
+      image: webber1580/easysender:${CI_PIPELINE_ID}
+      networks:
+        - net
+    
+    frontend:
+      image: webber1580/frontend:${CI_PIPELINE_ID}
+      ports:
+        - "3333:80"
+      networks:
+        - net
+    
+    tokener_tarantool:
+      image: webber1580/tokener_tarantool:56715927
+      environment:
+        TARANTOOL_USER_NAME: "tester"
+        TARANTOOL_USER_PASSWORD: "password"
+      networks:
+        - net
+    
+    wauth:
+      image: webber1580/wauth:${CI_PIPELINE_ID}
+      ports:
+        - "7070:7070"
+      depends_on:
+        - database
+      networks:
+        - net
+
+networks:
+    net:

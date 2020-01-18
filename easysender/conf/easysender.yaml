@@ -1,0 +1,20 @@
+host: "corp.codechat.ru"
+bind: 5555
+
+email:
+  pool_size: 4
+
+smtp_auth:
+  enable: 1
+
+  ssl: 1
+
+  host: "smtp.mail.ru"
+  email: "inwady@mail.ru"
+  password: "helloworld22"
+
+template:
+  file:
+    greeting: "./template/greeting.tmpl"
+    passrestore: "./template/passrestore.tmpl"
+    subscribe: "./template/subscribe.tmpl"

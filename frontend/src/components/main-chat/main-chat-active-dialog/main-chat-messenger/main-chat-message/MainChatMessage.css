@@ -1,0 +1,9 @@
+.Message {
+  line-height: 1.5em;
+}
+
+.Message .Author {
+  font-weight: bold;
+  color: #888;
+  margin: 0 5px 0 0;
+}

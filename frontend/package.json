@@ -1,0 +1,43 @@
+{
+  "name": "frontend",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@aspnet/signalr": "^1.0.4",
+    "@material-ui/core": "^3.3.2",
+    "@material-ui/icons": "^3.0.1",
+    "@types/react": "^16.4.18",
+    "@types/react-dom": "^16.0.9",
+    "@types/react-router-dom": "^4.3.1",
+    "classnames": "^2.2.6",
+    "codemirror": "^5.42.0",
+    "jwt-decode": "^2.2.0",
+    "prop-types": "^15.6.2",
+    "react": "^16.6.0",
+    "react-codemirror": "git://github.com/skidding/react-codemirror.git#106-fix-update",
+    "react-dom": "^16.6.0",
+    "react-google-recaptcha": "^1.0.4",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "2.1.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "awesome-typescript-loader": "^5.2.1",
+    "source-map-loader": "^0.2.4",
+    "typescript": "^3.1.6"
+  }
+}
