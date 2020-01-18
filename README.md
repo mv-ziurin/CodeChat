@@ -1,5 +1,5 @@
 # CodeChat 
-![enter image description here](https://gitlab.com/codechat-bmstu/codechat/-/wikis/uploads/3f6680b29ad7cea98545256e34c5f683/hellologo.png)
+![enter image description here](https://gitlab.com/codechat-bmstu/codechat/-/wikis/uploads/3f6680b29ad7cea98545256e34c5f683/hellologo.png)\
 This is the web messenger project created for educational purposes in collaboration with @webber1580 (https://github.com/webber1580) and @inwady (https://github.com/inwady)
 
 ## Project overview
